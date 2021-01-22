@@ -1,12 +1,23 @@
 const mysql = require('mysql');
 
+// const connection = mysql.createConnection({
+//   host: 'localhost',
+//   port: 3306,
+//   user: 'root',
+//   password: 'f0rcheTTes*',
+//   database: 'burgers_db',
+// });
+
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'db4free.net',
   port: 3306,
-  user: 'root',
-  password: 'f0rcheTTes*',
-  database: 'burgers_db',
+  user: 'natasha123',
+  password: '12cb1e23',
+  database: 'burgers_db1',
 });
+
+
+
 
 // let table = `
 // CREATE TABLE IF NOT EXISTS burgers (
@@ -36,9 +47,9 @@ const connection = mysql.createConnection({
 // `
 
 // const createTable = () => {
-//   connection.query(table, (err,res) => {
-//     if (err) throw err;
-//   });
+// //   connection.query(data, (err,res) => {
+// //     if (err) throw err;
+// //   });
 //   connection.query(data, (err,res) => {
 //     if (err) throw err;
 //   });

@@ -30,14 +30,15 @@ const orm = {
   updateOne(id, ...keyValuePairs) {
     return new Promise((resolve,reject) => {
       let query = `UPDATE ${table} SET ? WHERE id = ?`
-      let obj = keyValuePairs.map(kv => {
-        obj[kv[0]] = kv[1]
-      })
-      let q = connection.query(query, [obj], id,
+      let obj = {};
+      keyValuePairs.map(kv => {
+        obj[kv[0]] = kv[1];
+      });
+      let q = connection.query(query, [obj, id],
       (err, data) => {
-        if (err)  throw err;
+        if (err) reject(err);
         console.table(q.sql)
-        return data;
+        resolve(data);
       });
     });
   }

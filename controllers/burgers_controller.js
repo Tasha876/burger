@@ -1,6 +1,4 @@
-const express = require('express');
-
-
+// const express = require('express');
 
 const connection = require('../config/connection')
 
@@ -10,18 +8,19 @@ module.exports = (app) => {
   
   app.get('/', async (req,res) => {
     let burgers = await burger.selectAll();
-    res.render('index', {burgers: burgers});
+    res.render('index',{ burgers: burgers });
   });
 
   app.post('/', async (req, res) => {
     console.log(req.body)
     let burgers = await burger.add(req.body.burger_name);
-    res.render('/')
+    res.redirect('/');
   });
 
-  app.post('/update'), async (req, res) => {
-    let burger = req.body
-    let data = await burger.update(burger.id, burger.burger_name, burger.devoured);
-    res.json(data)
-  }
+  app.post('/update/:id', async (req, res) => {
+    console.log('hello')
+    let{ id }= req.params
+    let data = await burger.update(id, true);
+    res.redirect('/')
+  });
 }

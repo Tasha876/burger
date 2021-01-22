@@ -2,9 +2,11 @@
 <div class="nonDevoured float-left col-3 text-center">
   {{#each burgers}}
     {{#unless devoured}}
-    <p>Eat a {{burger_name}}!</p>
-    <button class="btn btn-success" method="post" action="/update">Devour it!</button>
-    <hr>
+    <form method="post" action="/update/{{id}}">
+      <span class="badge badge-secondary rounded-circle d-flex align-items-center m-auto justify-content-center" style="width: 1.5rem; height: 1.5rem">{{id}}</span>
+    <p name="burger_name" class="m-2">Eat a {{burger_name}}!</p>
+    <button type="submit" class="btn btn-success mb-4">Devour it!</button>
+    </form>
     {{/unless}}
   {{/each}}
 
@@ -12,6 +14,7 @@
 
 <div class="jumbotron col-6 text-center">
 <h1 class="display-1">EAT DA BURGER</h1>
+<img src="../public/assets/img/burger.png">
   <p class="">What burger would you like to add to your plate?</p>
 <form method="post" action="/">
   <input name="burger_name" type="text">
