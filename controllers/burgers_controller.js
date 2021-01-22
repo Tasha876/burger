@@ -25,7 +25,6 @@ module.exports = (app) => {
 
   app.post('/:id', async (req, res) => {
     let { id } = req.params
-    console.log('del')
     let data = await burger.delete(id);
     res.redirect('/')
   });

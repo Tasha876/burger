@@ -49,8 +49,6 @@ const orm = {
       (err, data) => {
         if (err) reject(err);
         resolve(data);
-        console.log(data)
-        console.log(q.sql)
       });
     });
   }

@@ -7,7 +7,7 @@ const burger = {
   }, 
 
   async add(burger_name) {
-    return await orm.insertOne(['burger_name', burger_name])
+    return await orm.insertOne(['burger_name', burger_name.trim().toLowerCase()])
   },
 
   async update(id, devoured) {
