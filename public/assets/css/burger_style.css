@@ -21,7 +21,7 @@ html, body, .container, .row {
 }
 
 .btn-danger:hover, .btn-danger:active {
-    background-color: #dc3545;
+    background-color: #dc3545 !important;
     cursor: default !important;
 }
 
