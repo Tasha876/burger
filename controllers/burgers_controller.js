@@ -18,7 +18,6 @@ module.exports = (app) => {
   });
 
   app.post('/update/:id', async (req, res) => {
-    console.log('hello')
     let{ id }= req.params
     let data = await burger.update(id, true);
     res.redirect('/')

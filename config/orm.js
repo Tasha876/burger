@@ -37,7 +37,6 @@ const orm = {
       let q = connection.query(query, [obj, id],
       (err, data) => {
         if (err) reject(err);
-        console.table(q.sql)
         resolve(data);
       });
     });

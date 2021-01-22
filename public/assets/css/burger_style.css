@@ -1,0 +1,17 @@
+/* img {
+    height: 16rem;
+    width: auto;
+} */
+
+body, html {
+    height: 100%;
+}
+
+.btn.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover, .btn-danger:active {
+    background-color: #dc3545;
+    cursor: default !important;
+}

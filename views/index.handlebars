@@ -1,4 +1,5 @@
-<div class="row">
+<div class="container h-100">
+<div class="row h-100">
 <div class="nonDevoured float-left col-3 text-center">
   {{#each burgers}}
     {{#unless devoured}}
@@ -12,9 +13,9 @@
 
 </div>
 
-<div class="jumbotron col-6 text-center">
-<h1 class="display-1">EAT DA BURGER</h1>
-<img src="../public/assets/img/burger.png">
+<div class="jumbotron col-6 text-center p-0 m-0 h-100">
+<h1 class="display-2 pt-5">EAT DA BURGER</h1>
+<img src="./assets/img/burger.png" class="img-fluid" style="max-width: 70%">
   <p class="">What burger would you like to add to your plate?</p>
 <form method="post" action="/">
   <input name="burger_name" type="text">
@@ -31,6 +32,7 @@
     {{/if}}
   {{/each}}
 
+</div>
 </div>
 </div>
 

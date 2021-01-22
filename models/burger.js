@@ -3,8 +3,7 @@ const orm = require('../config/orm');
 const burger = {
 
   async selectAll() {
-    let all = await orm.selectAll().catch(err => console.log(err));
-    return all
+    return await orm.selectAll().catch(err => console.log(err));
   }, 
 
   async add(burger_name) {
