@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>EAT DA BURGER</title>
-  </head>
-<body>
+<div class="row">
+<div class="nonDevoured float-left col-3 text-center">
+  {{#each burgers}}
+    {{#unless devoured}}
+    <p>Eat a {{burger_name}}!</p>
+    <button class="btn btn-success" method="post" action="/update">Devour it!</button>
+    <hr>
+    {{/unless}}
+  {{/each}}
 
-    {{{main}}}
+</div>
 
-</body>
-</html> 
+<div class="jumbotron col-6 text-center">
+<h1 class="display-1">EAT DA BURGER</h1>
+  <p class="">What burger would you like to add to your plate?</p>
+<form method="post" action="/">
+  <input name="burger_name" type="text">
+</form>
+</div>
+
+<div class="devoured float-right col-3 text-center">
+
+  {{#each burgers}}
+    {{#if devoured}}
+    <p>Finished a {{burger_name}}</p>
+    <h2><span class="btn btn-danger">Tasty!</span></h2>
+    <hr>
+    {{/if}}
+  {{/each}}
+
+</div>
+</div>
+
+
+

@@ -2,17 +2,18 @@ const orm = require('../config/orm');
 
 const burger = {
 
-  selectAll() {
-    return orm.selectAll()
+  async selectAll() {
+    let all = await orm.selectAll().catch(err => console.log(err));
+    console.log(all)
+    return all
   }, 
 
-  add(burger_name) {
-    console.log('here')
-    return orm.insertOne(['burger_name',burger_name])
+  async add(burger_name) {
+    return await orm.insertOne(['burger_name', burger_name])
   },
 
-  update(id, burger_name, devoured) {
-    return orm.updateOne(
+  async update(id, burger_name, devoured) {
+    return await orm.updateOne(
       ['id', id], ['burger_name', burger_name], ['devoured', devoured]
     )
   }

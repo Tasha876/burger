@@ -1,11 +1,11 @@
 const mysql = require('mysql');
 
 const connection = mysql.createConnection({
-  host: 'db4free.net',
+  host: 'localhost',
   port: 3306,
-  user: 'natasha123',
-  password: '12cb1e23',
-  database: 'burgers_db1',
+  user: 'root',
+  password: 'f0rcheTTes*',
+  database: 'burgers_db',
 });
 
 // let table = `

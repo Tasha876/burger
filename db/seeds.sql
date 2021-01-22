@@ -3,13 +3,13 @@ burgers(burger_name, devoured)
 VALUES
 (
   'big Mac',
-  false,
+  false
 ),
 (
   'chicken burger',
-  true,
+  true
 ),
 (
   'veggie burger',
-  true,
+  true
 );
