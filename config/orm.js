@@ -40,7 +40,22 @@ const orm = {
         resolve(data);
       });
     });
+  },
+
+  deleteOne(id) {
+    return new Promise((resolve,reject) => {
+      let query = `DELETE FROM ${table} WHERE id = ?`;
+      let q = connection.query(query, id,
+      (err, data) => {
+        if (err) reject(err);
+        resolve(data);
+        console.log(data)
+        console.log(q.sql)
+      });
+    });
   }
+
+  
 }
 
 module.exports = orm;

@@ -14,6 +14,10 @@ const burger = {
     return await orm.updateOne(
       id, ['devoured', devoured]
     )
+  },
+
+  async delete(id) {
+    return await orm.deleteOne(id);
   }
 }
 

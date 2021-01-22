@@ -18,8 +18,15 @@ module.exports = (app) => {
   });
 
   app.post('/update/:id', async (req, res) => {
-    let{ id }= req.params
+    let { id } = req.params
     let data = await burger.update(id, true);
+    res.redirect('/')
+  });
+
+  app.post('/:id', async (req, res) => {
+    let { id } = req.params
+    console.log('del')
+    let data = await burger.delete(id);
     res.redirect('/')
   });
 }

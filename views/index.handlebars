@@ -3,11 +3,13 @@
 <div class="nonDevoured float-left col-3 text-center">
   {{#each burgers}}
     {{#unless devoured}}
+    <div>
     <form method="post" action="/update/{{id}}">
       <span class="badge badge-secondary rounded-circle d-flex align-items-center m-auto justify-content-center" style="width: 1.5rem; height: 1.5rem">{{id}}</span>
     <p name="burger_name" class="m-2">Eat a {{burger_name}}!</p>
     <button type="submit" class="btn btn-success mb-4">Devour it!</button>
     </form>
+    </div>
     {{/unless}}
   {{/each}}
 
@@ -26,9 +28,12 @@
 
   {{#each burgers}}
     {{#if devoured}}
+    <div class="devoured-burger">
+      <form method="post" action="/{{id}}"><button class="btn py-0 px-1" type="submit"></button></form>
     <p>Finished a {{burger_name}}</p>
     <h2><span class="btn btn-danger">Tasty!</span></h2>
     <hr>
+    </div>
     {{/if}}
   {{/each}}
 
